@@ -5,10 +5,8 @@ on:
   release:
     types: [published]
   push:
-    tags:
-    - 'v*'
-  #  branches: 
-  #    - master
+    branches: 
+      - main
   schedule:
     - cron: "*/30 0,4,9,14 * * *"
   watch:
@@ -24,7 +22,7 @@ jobs:
     - name: Set up Python #安装python
       uses: actions/setup-python@v1
       with:
-        python-version: 3.8
+        python-version: 3.9
     - name: Install requirements #安装requests
       run: |
         pip install -r requirements.txt
